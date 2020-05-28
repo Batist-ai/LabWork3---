@@ -204,68 +204,69 @@ void initializeDefaultScene(out STriangle triangles[TRIANGLES_COUNT], out SSpher
 
 	// CUBE
 	// front wall
-	triangles[12].v1 = vec3(1.0,-1.0, -1.0);
-	triangles[12].v2 = vec3(3.0, -1.0, -1.0);
-	triangles[12].v3 = vec3(1.0, 1.0, -1.0);
+	triangles[12].v1 = vec3(1.0,-3.0, -1.0);
+	triangles[12].v2 = vec3(3.0, -3.0, -1.0);
+	triangles[12].v3 = vec3(1.0, -1.0, -1.0);
 	triangles[12].MaterialIdx = 4;
-	triangles[13].v1 = vec3( 3.0, 1.0, -1.0);
-	triangles[13].v2 = vec3(1.0, 1.0, -1.0);
-	triangles[13].v3 = vec3( 3.0,-1.0, -1.0);
+	triangles[13].v1 = vec3( 3.0, -1.0, -1.0);
+	triangles[13].v2 = vec3(1.0, -1.0, -1.0);
+	triangles[13].v3 = vec3( 3.0,-3.0, -1.0);
 	triangles[13].MaterialIdx = 4;
 
 
 	/* left wall */
-	triangles[14].v1 = vec3(1.0,-1.0,-1.0);
-	triangles[14].v2 = vec3(1.0, 1.0, 1.0);
-	triangles[14].v3 = vec3(1.0, 1.0,-1.0);
+	triangles[14].v1 = vec3(1.0,-3.0,-1.0);
+	triangles[14].v2 = vec3(1.0, -1.0, 1.0);
+	triangles[14].v3 = vec3(1.0, -1.0,-1.0);
 	triangles[14].MaterialIdx = 4;
-	triangles[15].v1 = vec3(1.0,-1.0,-1.0);
-	triangles[15].v2 = vec3(1.0,-1.0, 1.0);
-	triangles[15].v3 = vec3(1.0, 1.0, 1.0);
+	triangles[15].v1 = vec3(1.0,-3.0,-1.0);
+	triangles[15].v2 = vec3(1.0,-3.0, 1.0);
+	triangles[15].v3 = vec3(1.0, -1.0, 1.0);
 	triangles[15].MaterialIdx = 4;
 
 	/* right wall */
-	triangles[16].v1 = vec3(3.0,-1.0,-1.0);
-	triangles[16].v2 = vec3(3.0, 1.0, 1.0);
-	triangles[16].v3 = vec3(3.0, 1.0,-1.0);
+	triangles[16].v1 = vec3(3.0,-3.0,-1.0);
+	triangles[16].v2 = vec3(3.0, -1.0, 1.0);
+	triangles[16].v3 = vec3(3.0, -1.0,-1.0);
 	triangles[16].MaterialIdx = 4;
-	triangles[17].v1 = vec3(3.0,-1.0,-1.0);
-	triangles[17].v2 = vec3(3.0,-1.0, 1.0);
-	triangles[17].v3 = vec3(3.0, 1.0, 1.0);
+	triangles[17].v1 = vec3(3.0,-3.0,-1.0);
+	triangles[17].v2 = vec3(3.0,-3.0, 1.0);
+	triangles[17].v3 = vec3(3.0, -1.0, 1.0);
 	triangles[17].MaterialIdx = 4;
 
 	/* top */
-	triangles[20].v1 = vec3(3.0, 1.0, 1.0);
-	triangles[20].v2 = vec3(3.0, 1.0, -1.0);
-	triangles[20].v3 = vec3(1.0, 1.0, 1.0);
+	triangles[20].v1 = vec3(3.0, -1.0, 1.0);
+	triangles[20].v2 = vec3(3.0, -1.0, -1.0);
+	triangles[20].v3 = vec3(1.0, -1.0, 1.0);
 	triangles[20].MaterialIdx = 4;
-	triangles[21].v1 = vec3(1, 1.0, -1.0);
-	triangles[21].v2 = vec3(3.0, 1.0, -1.0);
-	triangles[21].v3 = vec3(1.0, 1.0, 1.0);
+	triangles[21].v1 = vec3(1, -1.0, -1.0);
+	triangles[21].v2 = vec3(3.0, -1.0, -1.0);
+	triangles[21].v3 = vec3(1.0, -1.0, 1.0);
 	triangles[21].MaterialIdx = 4;
 
 	/* bottom */
-	triangles[22].v1 = vec3(3.0, -1.0, 1.0);
-	triangles[22].v2 = vec3(3.0, -1.0, -1.0);
-	triangles[22].v3 = vec3(1.0, -1.0, 1.0);
+	triangles[22].v1 = vec3(3.0, -3.0, 1.0);
+	triangles[22].v2 = vec3(3.0, -3.0, -1.0);
+	triangles[22].v3 = vec3(1.0, -3.0, 1.0);
 	triangles[22].MaterialIdx = 4;
-	triangles[23].v1 = vec3(1.0, -1.0, -1.0);
-	triangles[23].v2 = vec3(3.0, -1.0, -1.0);
-	triangles[23].v3 = vec3(1.0, -1.0, 1.0);
+	triangles[23].v1 = vec3(1.0, -3.0, -1.0);
+	triangles[23].v2 = vec3(3.0, -3.0, -1.0);
+	triangles[23].v3 = vec3(1.0, -3.0, 1.0);
 	triangles[23].MaterialIdx = 4;
 
 	/* +back wall */
-	triangles[18].v1 = vec3(1.0, -1.0, 1.0);
-	triangles[18].v2 = vec3(3.0, -1.0, 1.0);
-	triangles[18].v3 = vec3(1.0, 1.0, 1.0);
-	triangles[18].MaterialIdx = 5;
-	triangles[19].v1 = vec3(3.0, 1.0, 1.0);
-	triangles[19].v2 = vec3(1.0, 1.0, 1.0);
-	triangles[19].v3 = vec3(3.0,-1.0, 1.0);
-	triangles[19].MaterialIdx = 5;
+	triangles[18].v1 = vec3(1.0, -3.0, 1.0);
+	triangles[18].v2 = vec3(3.0, -3.0, 1.0);
+	triangles[18].v3 = vec3(1.0, -1.0, 1.0);
+	triangles[18].MaterialIdx = 4;
+	triangles[19].v1 = vec3(3.0, -1.0, 1.0);
+	triangles[19].v2 = vec3(1.0, -1.0, 1.0);
+	triangles[19].v3 = vec3(3.0, -3.0, 1.0);
+	triangles[19].MaterialIdx = 4;
+
 
 	spheres[0].Center = vec3(-1.0,-1.0, 0.0);
-	spheres[0].Radius = 2.0;
+	spheres[0].Radius = 1.5;
 	spheres[0].MaterialIdx = 5;
 	spheres[1].Center = vec3(2.0,1.0,2.0);
 	spheres[1].Radius = 1.0;
@@ -309,9 +310,9 @@ void initializeDefaultLightMaterials(out SMaterial materials[MATERIALS_COUNT])
 
 	materials[4].Color = materialColor4;
     materials[4].LightCoeffs = lightCoefs;
-    materials[4].ReflectionCoef = 0.5;
+    materials[4].ReflectionCoef = 0.1;
     materials[4].RefractionCoef = 1.0;
-    materials[4].MaterialType = DIFFUSE;
+    materials[4].MaterialType = MIRROR_REFLECTION;
 
 	materials[5].Color = materialColor5;
     materials[5].LightCoeffs = lightCoefs;
