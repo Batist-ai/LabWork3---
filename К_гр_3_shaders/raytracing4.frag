@@ -83,8 +83,8 @@ const int REFLECTION = 2;
 const int REFRACTION = 3;
 
 const int SPHERES_COUNT = 2;
-const int TRIANGLES_COUNT = 24;
-const int MATERIALS_COUNT = 6;
+const int TRIANGLES_COUNT = 28;
+const int MATERIALS_COUNT = 7;
 const int RAYS_STACK_SIZE = 8; 
 
 #define BIG 1000000.0
@@ -122,6 +122,7 @@ uniform vec3 materialColor2;
 uniform vec3 materialColor3;
 uniform vec3 materialColor4;
 uniform vec3 materialColor5;
+uniform vec3 materialColor6;
 
 /********************************************** SETUP SCENE ***********************************************************/
 SCamera initializeDefaultCamera()
@@ -264,6 +265,27 @@ void initializeDefaultScene(out STriangle triangles[TRIANGLES_COUNT], out SSpher
 	triangles[19].v3 = vec3(3.0, -3.0, 1.0);
 	triangles[19].MaterialIdx = 4;
 
+	// TETRAHEDRON
+	// rear
+	triangles[24].v1 = vec3(-2.0,-3.0, -1.5);
+	triangles[24].v2 = vec3(-1.0, -3.0, -2.0);
+	triangles[24].v3 = vec3(-1.0, -3.0, -1.0);
+	triangles[24].MaterialIdx = 6;
+	// right
+	triangles[25].v1 = vec3(-1.0, -3.0, -2.0);
+	triangles[25].v2 = vec3(-1.0, -3.0, -1.0);
+	triangles[25].v3 = vec3( -1.5,-2.0, -1.5);
+	triangles[25].MaterialIdx = 6;
+	// front
+	triangles[26].v1 = vec3(-1.5,-2.0,-1.5);
+	triangles[26].v2 = vec3(-1.0, -3.0, -2.0);
+	triangles[26].v3 = vec3(-2.0, -3.0,-1.5);
+	triangles[26].MaterialIdx = 6;
+	// back
+	triangles[27].v1 = vec3(-2.0,-3.0,-1.5);
+	triangles[27].v2 = vec3(-1.0,-3.0, -1.0);
+	triangles[27].v3 = vec3(-1.5, -2.0, -1.5);
+	triangles[27].MaterialIdx = 6;
 
 	spheres[0].Center = vec3(-1.0,-1.0, 0.0);
 	spheres[0].Radius = 1.5;
@@ -319,6 +341,12 @@ void initializeDefaultLightMaterials(out SMaterial materials[MATERIALS_COUNT])
     materials[5].ReflectionCoef = 0.5;
     materials[5].RefractionCoef = 1.0;
     materials[5].MaterialType = MIRROR_REFLECTION;
+
+	materials[6].Color = materialColor6;
+    materials[6].LightCoeffs = lightCoefs;
+    materials[6].ReflectionCoef = 0.1;
+    materials[6].RefractionCoef = 1.0;
+    materials[6].MaterialType = MIRROR_REFLECTION;
 }
 
 

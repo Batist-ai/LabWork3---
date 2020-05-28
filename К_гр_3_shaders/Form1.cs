@@ -34,6 +34,7 @@ namespace К_гр_3_shaders
             materialsColors[3] = Color.Cyan;
             materialsColors[4] = Color.Yellow;
             materialsColors[5] = Color.White;
+            materialsColors[6] = Color.Aqua;
 
             lbMaterials.SelectedIndex = 0;
         }

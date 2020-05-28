@@ -30,17 +30,17 @@
         {
             this.glControl1 = new OpenTK.GLControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gbMaterialParameters = new System.Windows.Forms.GroupBox();
+            this.btnColor = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbMaterials = new System.Windows.Forms.ListBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbMaterials = new System.Windows.Forms.ListBox();
-            this.gbMaterialParameters = new System.Windows.Forms.GroupBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnColor = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.gbMaterialParameters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // glControl1
@@ -68,6 +68,54 @@
             this.panel1.Size = new System.Drawing.Size(234, 503);
             this.panel1.TabIndex = 1;
             // 
+            // gbMaterialParameters
+            // 
+            this.gbMaterialParameters.Controls.Add(this.btnColor);
+            this.gbMaterialParameters.Controls.Add(this.label2);
+            this.gbMaterialParameters.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMaterialParameters.Location = new System.Drawing.Point(5, 100);
+            this.gbMaterialParameters.Name = "gbMaterialParameters";
+            this.gbMaterialParameters.Size = new System.Drawing.Size(224, 56);
+            this.gbMaterialParameters.TabIndex = 3;
+            this.gbMaterialParameters.TabStop = false;
+            this.gbMaterialParameters.Text = "Параметры материала:";
+            // 
+            // btnColor
+            // 
+            this.btnColor.Location = new System.Drawing.Point(67, 25);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(150, 23);
+            this.btnColor.TabIndex = 1;
+            this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Цвет:";
+            // 
+            // lbMaterials
+            // 
+            this.lbMaterials.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbMaterials.FormattingEnabled = true;
+            this.lbMaterials.Items.AddRange(new object[] {
+            "Потолок, пол, передняя стена",
+            "Левая стена",
+            "Правая стена",
+            "Задняя стена",
+            "Куб",
+            "Сфера",
+            "Тетраэдр"});
+            this.lbMaterials.Location = new System.Drawing.Point(5, 5);
+            this.lbMaterials.Name = "lbMaterials";
+            this.lbMaterials.Size = new System.Drawing.Size(224, 95);
+            this.lbMaterials.TabIndex = 2;
+            this.lbMaterials.SelectedIndexChanged += new System.EventHandler(this.lbMaterials_SelectedIndexChanged);
+            // 
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(15, 451);
@@ -94,53 +142,6 @@
             this.panel2.Size = new System.Drawing.Size(739, 503);
             this.panel2.TabIndex = 2;
             // 
-            // lbMaterials
-            // 
-            this.lbMaterials.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbMaterials.FormattingEnabled = true;
-            this.lbMaterials.Items.AddRange(new object[] {
-            "Материал 1",
-            "Материал 2",
-            "Материал 3",
-            "Материал 4",
-            "Материал 5",
-            "Материал 6"});
-            this.lbMaterials.Location = new System.Drawing.Point(5, 5);
-            this.lbMaterials.Name = "lbMaterials";
-            this.lbMaterials.Size = new System.Drawing.Size(224, 82);
-            this.lbMaterials.TabIndex = 2;
-            this.lbMaterials.SelectedIndexChanged += new System.EventHandler(this.lbMaterials_SelectedIndexChanged);
-            // 
-            // gbMaterialParameters
-            // 
-            this.gbMaterialParameters.Controls.Add(this.btnColor);
-            this.gbMaterialParameters.Controls.Add(this.label2);
-            this.gbMaterialParameters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbMaterialParameters.Location = new System.Drawing.Point(5, 87);
-            this.gbMaterialParameters.Name = "gbMaterialParameters";
-            this.gbMaterialParameters.Size = new System.Drawing.Size(224, 56);
-            this.gbMaterialParameters.TabIndex = 3;
-            this.gbMaterialParameters.TabStop = false;
-            this.gbMaterialParameters.Text = "Параметры материала:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Цвет:";
-            // 
-            // btnColor
-            // 
-            this.btnColor.Location = new System.Drawing.Point(67, 25);
-            this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(150, 23);
-            this.btnColor.TabIndex = 1;
-            this.btnColor.UseVisualStyleBackColor = true;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,9 +155,9 @@
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.gbMaterialParameters.ResumeLayout(false);
             this.gbMaterialParameters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
 
         }
