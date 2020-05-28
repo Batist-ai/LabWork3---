@@ -116,6 +116,12 @@ SMaterial materials[MATERIALS_COUNT];
 STracingRay raysStack[RAYS_STACK_SIZE];
 uniform vec2 scale;
 uniform int traceDepth;
+uniform vec3 materialColor0;
+uniform vec3 materialColor1;
+uniform vec3 materialColor2;
+uniform vec3 materialColor3;
+uniform vec3 materialColor4;
+uniform vec3 materialColor5;
 
 /********************************************** SETUP SCENE ***********************************************************/
 SCamera initializeDefaultCamera()
@@ -215,37 +221,37 @@ void initializeDefaultLightMaterials(out SMaterial materials[MATERIALS_COUNT])
 	//vec4 lightCoefs = vec4(0.4,0.9,0.2,2.0);
 	vec4 lightCoefs = vec4(0.4,0.9,0.2,0.5);
 	// Top, Bottom, Front
-    materials[0].Color = WHITE;
+    materials[0].Color = materialColor0;
     materials[0].LightCoeffs = lightCoefs;
     materials[0].ReflectionCoef = 0.5;
     materials[0].RefractionCoef = 1.0;
     materials[0].MaterialType = DIFFUSE;
 	// Left
-    materials[1].Color = RED;
+    materials[1].Color = materialColor1;
     materials[1].LightCoeffs = lightCoefs;
     materials[1].ReflectionCoef = 0.5;
     materials[1].RefractionCoef = 1.0;
     materials[1].MaterialType = DIFFUSE;   
 	// Right
-	materials[2].Color = GREEN;
+	materials[2].Color = materialColor2;
     materials[2].LightCoeffs = lightCoefs;
     materials[2].ReflectionCoef = 0.5;
     materials[2].RefractionCoef = 1.0;
     materials[2].MaterialType = DIFFUSE;
 	// Back
-	materials[3].Color = CYAN;
+	materials[3].Color = materialColor3;
     materials[3].LightCoeffs = lightCoefs;
     materials[3].ReflectionCoef = 0.5;
     materials[3].RefractionCoef = 1.0;
     materials[3].MaterialType = DIFFUSE;
 
-	materials[4].Color = YELLOW;
+	materials[4].Color = materialColor4;
     materials[4].LightCoeffs = lightCoefs;
     materials[4].ReflectionCoef = 0.5;
     materials[4].RefractionCoef = 1.0;
     materials[4].MaterialType = DIFFUSE;
 
-	materials[5].Color = WHITE;
+	materials[5].Color = materialColor5;
     materials[5].LightCoeffs = lightCoefs;
     materials[5].ReflectionCoef = 0.5;
     materials[5].RefractionCoef = 1.0;

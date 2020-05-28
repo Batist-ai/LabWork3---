@@ -19,6 +19,7 @@ namespace К_гр_3_shaders
         int BasicProgramID, BasicVertexShader, BasicFragmentShader;
         int attribute_vpos = 0, uniform_pos = 0, uniform_aspect = 0;
         int uniform_traceDepth = 8;
+        Color[] uniform_materialColors;
         float aspect = 1.0f;
         Vector3 campos = new Vector3(1, 1, 3);
         //int BasicVertexShader;
@@ -28,21 +29,20 @@ namespace К_гр_3_shaders
         //int RayTracingFragmentShader;
         public View ()
         {
-
+            uniform_materialColors = new Color[6];
         }
 
-        public void SetupView(int width, int height, int traceDepth)
+        public void SetupView(int width, int height, int traceDepth, Color[] materialColors)
         {
             aspect = (float)width / (float)height;
             uniform_traceDepth = traceDepth;
+            uniform_materialColors = materialColors;
 
             InitGL();
 
             GL.Ortho(0, width, 0, height, -1, 1);
             GL.Viewport(0, 0, width, height);
 
-     
-            //aspect = 1.0f / aspect;
             InitShaders();
         }
 
@@ -74,6 +74,14 @@ namespace К_гр_3_shaders
             // Tracing depth
             int traceDepth = GL.GetUniformLocation(BasicProgramID, "traceDepth");
             GL.Uniform1(traceDepth, uniform_traceDepth);
+
+            // Materials color
+            for(int i=0; i < uniform_materialColors.Length; i++)
+            {
+                int materialColor = GL.GetUniformLocation(BasicProgramID, $"materialColor{i}");
+                Color color = uniform_materialColors[i];
+                GL.Uniform3(materialColor, new Vector3(color.R / 255f, color.G / 255f, color.B / 255f));
+            }
 
             // Quad
             GL.Color3(Color.White);

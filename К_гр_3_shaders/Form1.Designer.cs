@@ -33,8 +33,14 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbMaterials = new System.Windows.Forms.ListBox();
+            this.gbMaterialParameters = new System.Windows.Forms.GroupBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnColor = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.gbMaterialParameters.SuspendLayout();
             this.SuspendLayout();
             // 
             // glControl1
@@ -51,11 +57,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.gbMaterialParameters);
+            this.panel1.Controls.Add(this.lbMaterials);
             this.panel1.Controls.Add(this.trackBar1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(505, 0);
             this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(234, 503);
             this.panel1.TabIndex = 1;
             // 
@@ -71,7 +80,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 434);
+            this.label1.Location = new System.Drawing.Point(17, 439);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 0;
@@ -84,6 +93,53 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(739, 503);
             this.panel2.TabIndex = 2;
+            // 
+            // lbMaterials
+            // 
+            this.lbMaterials.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbMaterials.FormattingEnabled = true;
+            this.lbMaterials.Items.AddRange(new object[] {
+            "Материал 1",
+            "Материал 2",
+            "Материал 3",
+            "Материал 4",
+            "Материал 5",
+            "Материал 6"});
+            this.lbMaterials.Location = new System.Drawing.Point(5, 5);
+            this.lbMaterials.Name = "lbMaterials";
+            this.lbMaterials.Size = new System.Drawing.Size(224, 82);
+            this.lbMaterials.TabIndex = 2;
+            this.lbMaterials.SelectedIndexChanged += new System.EventHandler(this.lbMaterials_SelectedIndexChanged);
+            // 
+            // gbMaterialParameters
+            // 
+            this.gbMaterialParameters.Controls.Add(this.btnColor);
+            this.gbMaterialParameters.Controls.Add(this.label2);
+            this.gbMaterialParameters.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbMaterialParameters.Location = new System.Drawing.Point(5, 87);
+            this.gbMaterialParameters.Name = "gbMaterialParameters";
+            this.gbMaterialParameters.Size = new System.Drawing.Size(224, 56);
+            this.gbMaterialParameters.TabIndex = 3;
+            this.gbMaterialParameters.TabStop = false;
+            this.gbMaterialParameters.Text = "Параметры материала:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Цвет:";
+            // 
+            // btnColor
+            // 
+            this.btnColor.Location = new System.Drawing.Point(67, 25);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(150, 23);
+            this.btnColor.TabIndex = 1;
+            this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // Form1
             // 
@@ -99,6 +155,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.gbMaterialParameters.ResumeLayout(false);
+            this.gbMaterialParameters.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -110,6 +168,11 @@
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox gbMaterialParameters;
+        private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lbMaterials;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
