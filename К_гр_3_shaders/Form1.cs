@@ -55,8 +55,24 @@ namespace К_гр_3_shaders
         private void glControl1_Load(object sender, EventArgs e)
         {
             Init();
-            view.SetupView(glControl1.Width, glControl1.Height);
+            setupView();
             loaded = true;
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            setupView();
+        }
+
+        private void setupView()
+        {
+            view.SetupView(glControl1.Width, glControl1.Height, trackBar1.Value);
+            glControl1.Invalidate();
+        }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            setupView();
         }
     }
 }

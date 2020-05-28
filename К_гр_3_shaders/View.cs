@@ -18,6 +18,7 @@ namespace К_гр_3_shaders
         Vector3[] vertdata;
         int BasicProgramID, BasicVertexShader, BasicFragmentShader;
         int attribute_vpos = 0, uniform_pos = 0, uniform_aspect = 0;
+        int uniform_traceDepth = 8;
         float aspect = 1.0f;
         Vector3 campos = new Vector3(1, 1, 3);
         //int BasicVertexShader;
@@ -30,13 +31,18 @@ namespace К_гр_3_shaders
 
         }
 
-        public void SetupView(int width, int height)
+        public void SetupView(int width, int height, int traceDepth)
         {
+            aspect = (float)width / (float)height;
+            uniform_traceDepth = traceDepth;
+
             InitGL();
 
+            GL.Ortho(0, width, 0, height, -1, 1);
             GL.Viewport(0, 0, width, height);
 
-            aspect = (float)width / (float)height;
+     
+            //aspect = 1.0f / aspect;
             InitShaders();
         }
 
@@ -64,6 +70,10 @@ namespace К_гр_3_shaders
             // Camera
             int location = GL.GetUniformLocation(BasicProgramID, "scale");
             GL.Uniform2(location, new Vector2(1, 1/aspect));
+
+            // Tracing depth
+            int traceDepth = GL.GetUniformLocation(BasicProgramID, "traceDepth");
+            GL.Uniform1(traceDepth, uniform_traceDepth);
 
             // Quad
             GL.Color3(Color.White);

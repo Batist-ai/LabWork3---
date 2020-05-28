@@ -115,6 +115,7 @@ SSphere spheres[SPHERES_COUNT];
 SMaterial materials[MATERIALS_COUNT];
 STracingRay raysStack[RAYS_STACK_SIZE];
 uniform vec2 scale;
+uniform int traceDepth;
 
 /********************************************** SETUP SCENE ***********************************************************/
 SCamera initializeDefaultCamera()
@@ -546,8 +547,8 @@ float Fresnel(const vec3 I, const vec3 N, const float ior)
 } 
 
 /* ENTRY POINT *****************************************************/
-const int MAX_STACK_SIZE = 10;
-const int MAX_TRACE_DEPTH = 8;
+const int MAX_STACK_SIZE = 100;
+const int MAX_TRACE_DEPTH = traceDepth;
 STracingRay stack[MAX_STACK_SIZE];
 int stackSize = 0;
 
